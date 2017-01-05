@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace FilterTypes.Filters
 {
-    public class LogAttribute : FilterAttribute, IActionFilter
+    public class LogAttribute : FilterAttribute, IActionFilter, IResultFilter
     {
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
@@ -28,6 +28,28 @@ namespace FilterTypes.Filters
                 Action = filterContext.ActionDescriptor.ActionName,
                 ProcessDate = DateTime.Now,
                 Type = "Before"
+            });
+        }
+
+        public void OnResultExecuted(ResultExecutedContext filterContext)
+        {
+            LogsData.Logs.Add(new Models.Log
+            {
+                Controller = filterContext.RouteData.Values["controller"].ToString(),
+                Action = filterContext.RouteData.Values["action"].ToString(),
+                ProcessDate = DateTime.Now,
+                Type = "After Result"
+            });
+        }
+
+        public void OnResultExecuting(ResultExecutingContext filterContext)
+        {
+            LogsData.Logs.Add(new Models.Log
+            {
+                Controller = filterContext.RouteData.Values["controller"].ToString(),
+                Action = filterContext.RouteData.Values["action"].ToString(),
+                ProcessDate = DateTime.Now,
+                Type = "Before Result"
             });
         }
     }

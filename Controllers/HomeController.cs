@@ -8,9 +8,9 @@ using System.Web.Mvc;
 
 namespace FilterTypes.Controllers
 {
-    [Log]
     public class HomeController : Controller
     {
+        [Log]
         public ActionResult Index()
         {
             return View();
