@@ -8,9 +8,9 @@ using System.Web.Mvc;
 
 namespace FilterTypes.Controllers
 {
+    [Log]
     public class HomeController : Controller
     {
-        [Log]
         public ActionResult Index()
         {
             return View();
@@ -22,14 +22,14 @@ namespace FilterTypes.Controllers
 
             return View();
         }
-
-        [Log]
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
             return View();
         }
+
         public ActionResult Logs()
         {
             return View(LogsData.Logs);
