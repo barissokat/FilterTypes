@@ -11,5 +11,6 @@ namespace FilterTypes.Models
         public string Action { get; set; }
         public DateTime ProcessDate { get; set; }
         public string Type { get; set; }
+        public string ErrorMessage { get; set; }
     }
 }
