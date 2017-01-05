@@ -9,6 +9,7 @@ namespace FilterTypes.Controllers
     public class ErrorController : Controller
     {
         // GET: Error
+        [HandleError(ExceptionType = typeof(FormatException), View = "FormatError")]
         public ActionResult Index()
         {
             throw new FormatException();

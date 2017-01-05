@@ -1,0 +1,8 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = "Format Error";
+}
+
+<h1 class="text-danger">Format Error.</h1>
+<h2>Controller: @Model.ControllerName - Action: @Model.ActionName</h2>
+<h3>Error Detail: @Model.Exception.Message</h3>
