@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FilterTypes.Filters;
+using FilterTypes.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,7 @@ namespace FilterTypes.Controllers
 {
     public class HomeController : Controller
     {
+        [Log]
         public ActionResult Index()
         {
             return View();
@@ -20,11 +23,16 @@ namespace FilterTypes.Controllers
             return View();
         }
 
+        [Log]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public ActionResult Logs()
+        {
+            return View(LogsData.Logs);
         }
     }
 }

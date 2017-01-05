@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FilterTypes.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,12 +11,24 @@ namespace FilterTypes.Filters
     {
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            throw new NotImplementedException();
+            LogsData.Logs.Add(new Models.Log
+            {
+                Controller = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName,
+                Action = filterContext.ActionDescriptor.ActionName,
+                ProcessDate = DateTime.Now,
+                Type = "After"
+            });
         }
 
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            throw new NotImplementedException();
+            LogsData.Logs.Add(new Models.Log
+            {
+                Controller = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName,
+                Action = filterContext.ActionDescriptor.ActionName,
+                ProcessDate = DateTime.Now,
+                Type = "Before"
+            });
         }
     }
 }
