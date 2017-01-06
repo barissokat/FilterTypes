@@ -43,3 +43,7 @@ Result filtreleri, bir action çalıştıktan sonra geri dönüş verisinin derl
 Daha sonra logların tutulduğu **Log** sayfası açılır.
 
 ![alt tag](https://github.com/bsokat/FilterTypes/blob/master/Source/ResultFilter2.png)
+
+Üstteki ekran görüntüsündeki tip çeşitlerinden **Before Result**, action'ın geri dönüş verisi işlenmeden hemen önce çalışan metodu yani **onResultExecuting** metodunun çalıştığını temsil eder. onResultExecuting metodu **ResultExecutingContent** türünden bir nesne alır. Bu nesne ile işlem yapılan controller bilgisi, action'ın geri dönüş değeri, sonucun çalışması sırasında hata var mı bilgisi, oluşabilecek hatanın hata detayı, sonucun çalışması sırasında iptal edildi mi bilgisi  ile **RouteData** ve **HttpContext** nesneleri bulunur.
+
+Yine aynı ekran görüntüsündeki tip çeşitlerinden **After Result**, action'ın geri dönüş verisi işlenmeden hemen sonra çalışan metodu yani **onResultExecuted** metodunun çalıştığını temsil eder. onResultExecuted metodu **ResultExecutedContent** türünden bir nesne alır. Bu nesne ile işlem yapılan controller bilgisi, action'ın geri dönüş değeri, sonucun çalışması sırasında hata var mı bilgisi, oluşabilecek hatanın hata detayı, sonucun çalışması sırasında iptal edildi mi bilgisi  ile **RouteData** ve **HttpContext** nesneleri bulunur.
