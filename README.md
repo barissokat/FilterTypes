@@ -12,6 +12,27 @@ Bu projede kullanıcının sayfalar arasında gezinmesi sırasında yaptığı i
 	- Exception Filtresi
 	- Authorize Filtresi
 
+## Eklenilen veya Güncellenen Dosyalar
+
+- Controller 
+	1. ErrorController.cs
+	2. HomeController.cs
+- Filters
+	1. LogAttribute.cs
+- Models
+	1. Log.cs
+	2. LogsData.cs
+- Views
+	1. Error
+		- Index.cshtml
+	2. Home
+		- Logs.cshtml
+	3. Shared
+		- _Layout.cshtml
+		- Error.cshtml
+		- FormatError.cshtml
+- Web.config
+
 ## Filtrelerin Test Edilmesi
 
 #### Action Filtresi:
