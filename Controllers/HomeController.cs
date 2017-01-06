@@ -16,6 +16,7 @@ namespace FilterTypes.Controllers
             return View();
         }
 
+        [Authorize(Users = "baris")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
