@@ -12,7 +12,7 @@ Bu projede kullanıcının sayfalar arasında gezinmesi sırasında yaptığı i
 	- Exception Filtresi
 	- Authorize Filtresi
 
-## Eklenilen veya Güncellenen Dosyalar
+## Eklenen veya Güncellenen Dosyalar
 
 - Controller 
 	1. ErrorController.cs
