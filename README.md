@@ -1,6 +1,6 @@
 # FilterTypes
 
-<h3>Bu proje ASP.NET MVC'De filtreleme ve filtre çeşitleri konularının kavranması amacıyla yapılmıştır.</h3>
+<h3>Bu proje ASP.NET MVC'de filtreleme ve filtre çeşitleri konularının kavranması amacıyla yapılmıştır.</h3>
 
 ## Özet
 
@@ -22,7 +22,7 @@ Action filtreleri, bir action çalışmadan hemen önce ya da hemen sonra çalı
 
 ![alt tag](https://github.com/bsokat/FilterTypes/blob/master/Source/ActionFilter1.png)
 
-Daha sonra logların tutulduğu **Log** sayfası açılır.
+Daha sonra logların tutulduğu **Logs** sayfası açılır.
 
 ![alt tag](https://github.com/bsokat/FilterTypes/blob/master/Source/ActionFilter2.png)
 
@@ -30,7 +30,7 @@ Daha sonra logların tutulduğu **Log** sayfası açılır.
 
 Yine aynı ekran görüntüsündeki tip çeşitlerinden **After**, action'ın çalışmasını tamamlamasından hemen sonra çalışan metodu yani **onActionExecuted** metodunun çalıştığını temsil eder. onActionExecuted metodu **ActionExecutedContent** türünden bir nesne alır. Bu nesne ile işlem yapılan controller ve action bilgileri, action'un çalışması sırasında hata var mı bilgisi, oluşabilecek hatanın hata detayı, action çalışması sırasında iptal edildi mi bilgisi ile action'ın çalışması ardından geri dönen değer bilgilerine ulaşılabilinir.
 
-> Action'a tanımlanan **Log attribute**, tek tek action'lara tanımlamam yerine controller içindeki tüm action'larda geçerli olması isteniyorsa, action yerine controller sınıfına tanımlanmalıdır.
+> Action'a tanımlanan **Log attribute**, tek tek action'lara tanımlamak yerine controller içindeki tüm action'larda geçerli olması isteniyorsa, action yerine controller sınıfına tanımlanmalıdır.
 
 #### Result Filtresi:
 
@@ -40,10 +40,28 @@ Result filtreleri, bir action çalıştıktan sonra geri dönüş verisinin derl
 
 ![alt tag](https://github.com/bsokat/FilterTypes/blob/master/Source/ResultFilter1.png)
 
-Daha sonra logların tutulduğu **Log** sayfası açılır.
+Daha sonra logların tutulduğu **Logs** sayfası açılır.
 
 ![alt tag](https://github.com/bsokat/FilterTypes/blob/master/Source/ResultFilter2.png)
 
 Üstteki ekran görüntüsündeki tip çeşitlerinden **Before Result**, action'ın geri dönüş verisi işlenmeden hemen önce çalışan metodu yani **onResultExecuting** metodunun çalıştığını temsil eder. onResultExecuting metodu **ResultExecutingContent** türünden bir nesne alır. Bu nesne ile işlem yapılan controller bilgisi, action'ın geri dönüş değeri, sonucun çalışması sırasında hata var mı bilgisi, oluşabilecek hatanın hata detayı, sonucun çalışması sırasında iptal edildi mi bilgisi  ile **RouteData** ve **HttpContext** nesneleri bulunur.
 
 Yine aynı ekran görüntüsündeki tip çeşitlerinden **After Result**, action'ın geri dönüş verisi işlenmeden hemen sonra çalışan metodu yani **onResultExecuted** metodunun çalıştığını temsil eder. onResultExecuted metodu **ResultExecutedContent** türünden bir nesne alır. Bu nesne ile işlem yapılan controller bilgisi, action'ın geri dönüş değeri, sonucun çalışması sırasında hata var mı bilgisi, oluşabilecek hatanın hata detayı, sonucun çalışması sırasında iptal edildi mi bilgisi  ile **RouteData** ve **HttpContext** nesneleri bulunur.
+
+#### Result Filtresi:
+
+Exception filtreleri, projenin çalışması sırasında oluşan hataları yakalayıp işlem yapılmasını sağlayan filtredir. Oluşturulan filtre sınıfı, işlem yapılacak action'a ya da controller'a attribute olarak tanımlandıktan sonra çalışmaya başlar.
+
+İlk olarak format hatası fırlatan view açılmaya çalışılır ve alttaki ekran görüntüsündeki gibi hata yakalanır.
+
+![alt tag](https://github.com/bsokat/FilterTypes/blob/master/Source/ExceptionFilter1.png)
+
+Proje devam ettirildiği zaman, görüntülenmek istenilen view yerine hata bilgilerinin bulunduğu hata view'ine yönlendirilir.
+
+![alt tag](https://github.com/bsokat/FilterTypes/blob/master/Source/ExceptionFilter2.png)
+
+Daha sonra logların tutulduğu **Logs** sayfası açılır.
+
+![alt tag](https://github.com/bsokat/FilterTypes/blob/master/Source/ExceptionFilter3.png)
+
+Üstteki ekran görüntüsündeki tip çeşitlerinden **Error**, uygulama içinde bir hata oluştuğunda çalışan metodu yani **onException** metodunun çalıştığını temsil eder. onException metodu **ExceptionContent** türünden bir nesne alır. Bu nesne ile işlem yapılan controller bilgisi, action'ın geri dönüş değeri, sonucun çalışması sırasında hata var mı bilgisi, oluşabilecek hatanın hata detayı, sonucun çalışması sırasında iptal edildi mi bilgisi  ile **RouteData** ve **HttpContext** nesneleri bulunur.
