@@ -65,3 +65,13 @@ Daha sonra logların tutulduğu **Logs** sayfası açılır.
 ![alt tag](https://github.com/bsokat/FilterTypes/blob/master/Source/ExceptionFilter3.png)
 
 Üstteki ekran görüntüsündeki tip çeşitlerinden **Error**, uygulama içinde bir hata oluştuğunda çalışan metodu yani **onException** metodunun çalıştığını temsil eder. onException metodu **ExceptionContent** türünden bir nesne alır. Bu nesne ile işlem yapılan controller bilgisi, action'ın geri dönüş değeri, sonucun çalışması sırasında hata var mı bilgisi, oluşabilecek hatanın hata detayı, sonucun çalışması sırasında iptal edildi mi bilgisi  ile **RouteData** ve **HttpContext** nesneleri bulunur.
+
+#### Authorize Filtresi:
+
+Authorize filtreleri, projede controller ve action'lara kullanıcı ve roller bazında yetkilendirmenin yapılmasını sağlayan filtredir. Oluşturulan filtre sınıfı, işlem yapılacak action'a ya da controller'a attribute olarak tanımlandıktan sonra çalışmaya başlar.
+
+> Bu projede çalışmasını istediğimiz action'a **Authorize attribute**'u tanımlanmıştır ve herhangi bir kullanıcının bu siteye erişimi kesilmiştir.
+
+> ![alt tag](https://github.com/bsokat/FilterTypes/blob/master/Source/AuthorizationFilter1.png)
+
+> Ancak proje oluşturulurken Individual User Accounts seçeneği seçilmediği için, herhangi bir kullanıcı oluşturma ve kullanıcı girişi yapılamamaktadır. Projenin amacı sadece filtreleme olduğu için ayrı bir şekilde de yapılmamıştır. Ancak Authorization filtresinde tanımlı olan kullanıcı adıyla bir kullanıcı oluşturulup, bu kullanıcı ile giriş işleminden sonra istenilen sayfaya ulaşılmak istendiğinde başarılı bir şekilde ulaşılacaktır.
